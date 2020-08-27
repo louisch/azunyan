@@ -26,6 +26,7 @@ vendor
 
 # configuration files
 azunyan.conf
+ssh_pass.conf
 
 # frontend
 .build
