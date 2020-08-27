@@ -13,10 +13,6 @@ azunyan
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-#Bower modules
-bower_components
-node_modules
-
 #idea settings
 .idea
 
@@ -30,3 +26,10 @@ vendor
 
 # configuration files
 azunyan.conf
+
+# frontend
+.build
+build/
+node_modules/
+web_modules/
+static/
