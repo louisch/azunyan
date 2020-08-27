@@ -77,7 +77,7 @@ curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 
 # Build the app
 cd $GOPATH/github.com/callummance/azunyan
-npm install
+cd frontend && npm install && npm run build && cd ..
 dep ensure
 go build
 ```
@@ -98,6 +98,9 @@ On Windows:
 ```
 .\azunyan.exe
 ```
+
+### Frontend
+The frontend source files exist in their own directory at `frontend/`. A hot-reloading development server can be started from that directory with `npm start`. It can be built with `npm run build`.
 
 ### Configuration
 Configuration for this program is stored within `azunyan.conf` (in the root of the repository). An example configuration is provided within the repository as `azunyan.conf.example`. Simply copy the example configuration, naming the copy `azunyan.conf`, to get started.
