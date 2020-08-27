@@ -25,7 +25,7 @@ func Route(man manager.KaraokeManager) *gin.Engine {
 	router.StaticFS("/web_modules", http.Dir("./static/web_modules"))
 
 	//Forward root
-	router.GET("/", ForwardRoot)
+	// router.GET("/", ForwardRoot)
 
 	//API group
 	apig := router.Group("/api")
