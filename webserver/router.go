@@ -1,8 +1,6 @@
 package webserver
 
 import (
-	//"net/http"
-
 	"net/http"
 
 	"github.com/callummance/azunyan/manager"
@@ -17,10 +15,14 @@ func Route(man manager.KaraokeManager) *gin.Engine {
 	//Attach environment struct
 	router.Use(func(context *gin.Context) { middlewares.AttachEnvironment(&man, context) })
 
-	//Favicon
-	router.StaticFile("favicon.ico", "./static/frontend/favicon.ico")
 	//Static Files
-	router.StaticFS("/static", http.Dir("./static/frontend"))
+	router.StaticFile("/", "./static/index.html")
+	router.StaticFile("index.html", "./static/index.html")
+	router.StaticFile("favicon.ico", "./static/favicon.ico")
+	router.StaticFile("robots.txt", "./static/robots.txt")
+	router.StaticFS("/_dist_", http.Dir("./static/_dist_"))
+	router.StaticFS("/__snowpack__", http.Dir("./static/__snowpack__"))
+	router.StaticFS("/web_modules", http.Dir("./static/web_modules"))
 
 	//Forward root
 	router.GET("/", ForwardRoot)
