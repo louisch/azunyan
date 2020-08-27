@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build && rm -r ../static && cp -r build ../static",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "postcss": "^7.0.32",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tailwindcss": "^1.6.2"
+  },
+  "devDependencies": {
+    "@snowpack/app-scripts-react": "^1.8.3",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "eslint": "^7.6.0",
+    "jest": "^25.4.0",
+    "postcss-cli": "^7.1.1",
+    "prettier": "^2.0.5",
+    "snowpack": "^2.7.6",
+    "typescript": "^3.9.7"
+  }
+}
