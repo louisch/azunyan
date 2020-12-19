@@ -1,21 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import useSongLoader from './useSongLoader';
+import SongListContext from './SongListContext';
+
 
 function App(): React.ReactElement {
+  const songList = useSongLoader();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Test
-      </button>
-    </div>
+    <SongListContext.Provider value={songList}>
+      <div className="w-full h-full flex flex-col items-center">
+        <div className="w-full p-4 bg-gray-200 shadow">
+          <h1 className="text-xl">Azunyan</h1>
+        </div>
+      </div>
+    </SongListContext.Provider>
   );
 }
+
 
 export default App;
