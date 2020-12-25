@@ -54,6 +54,7 @@ func GetSongs(env databaseConfig) []models.Song {
 	defer cancel()
 	findOptions := options.Find()
 	findOptions.SetProjection(bson.M{
+		"_id":      1,
 		"creator":  1,
 		"title":    1,
 		"artist":   1,
