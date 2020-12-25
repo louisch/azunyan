@@ -11,6 +11,10 @@ import (
 	"github.com/BurntSushi/toml"
 )
 
+type GeneralConfig struct {
+	Env string `toml:"env"`
+}
+
 type WebConfig struct {
 	Port int `toml:"serverport"`
 }
@@ -32,6 +36,7 @@ type DbConfig struct {
 }
 
 type Config struct {
+	GeneralConfig GeneralConfig `toml:"generalconfig"`
 	DbConfig      DbConfig      `toml:"dbconfig"`
 	WebConfig     WebConfig     `toml:"webconfig"`
 	KaraokeConfig KaraokeConfig `toml:"karaokeconfig"`
